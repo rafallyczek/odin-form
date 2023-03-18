@@ -1,8 +1,108 @@
+/* General styling */
+
 *, *::after, *::before{
     box-sizing: border-box;
+}
+
+:root{
+    --clr-light: hsl(0, 0%, 98%);
+    --clr-semi-light: hsl(34, 50%, 90%);
+
+    --fs-large: 4rem;
 }
 
 body{
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    display: flex;
+}
+
+p{
+    margin: 0;
+}
+
+img{
+    max-width: 7rem;
+}
+
+/* Fonts */
+
+@font-face {
+    font-family: Pizzaria;
+    src: url("../assets/Pizzaria-MVZrJ.ttf");
+}
+
+/* Typography */
+
+a{
+    color: var(--clr-light);
+}
+
+/* Layout */
+
+header{
+    background-image: url("../assets/pizza.jpg");
+    background-size: cover;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+main{
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo{
+    margin-top: min(30%, 50vmax);
+    font-family: Pizzaria;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.credit{
+    margin-top: auto;
+}
+
+.desc,
+.form,
+.credit{
+    padding: 1rem;
+}
+
+/* Utility classes */
+
+.text-center{
+    text-align: center;
+}
+
+.fs-large{
+    font-size: var(--fs-large);
+}
+
+.text-clr-light{
+    color: var(--clr-light);
+}
+
+.bgc-semi-light{
+    background-color: var(--clr-semi-light);
+}
+
+.bgc-light{
+    background-color: var(--clr-light);
+}
+
+.bgc-transparent-dark{
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.bgc-transparent-x-dark{
+    background-color: rgba(0, 0, 0, 0.6);
 }
