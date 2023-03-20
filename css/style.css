@@ -80,7 +80,7 @@ main{
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
-    flex: 1;
+    flex: 2;
 }
 
 .logo{
@@ -213,20 +213,30 @@ input:invalid{
 /* Media queries */
 
 @media (min-width: 60em) {
+
     body{
         flex-direction: row;
     }
+
+    header{
+        flex: 1;
+    }
+
     .logo{
         margin-top: 10rem;
     }
+
     .form-wrapper{
         align-items: flex-start;
     }
+
     .register-form{
         flex-direction: row;
         flex-wrap: wrap;
     }
+
     .form-header{
         width: 100%;
     }
+    
 }
