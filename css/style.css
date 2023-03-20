@@ -34,8 +34,8 @@ body{
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+    display: flex;
+    flex-direction: column;
     font-family: Roboto;
 }
 
@@ -70,6 +70,7 @@ a{
 header{
     background-image: url("../assets/pizza.jpg");
     background-size: cover;
+    background-position: center;
     display: flex;
     flex-direction: column;
 }
@@ -79,10 +80,11 @@ main{
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
+    flex: 1;
 }
 
 .logo{
-    margin-top: min(30%, 50vmax);
+    margin: 5rem 0;
     font-family: Pizzaria;
     padding: 2rem;
     display: flex;
@@ -95,6 +97,10 @@ main{
     margin-top: auto;
 }
 
+.login{
+    margin-bottom: 1rem;
+}
+
 .desc,
 .form-wrapper,
 .credit,
@@ -105,14 +111,17 @@ main{
 /* Form */
 
 .form-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     box-shadow: 0 0 .5rem var(--clr-semi-light);
 }
 
 .register-form{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    width: 30em;
+    flex-direction: column;
+    align-items: center;
+    max-width: 30em;
     gap: 1rem;
     margin-top: 1rem;
 }
@@ -199,4 +208,25 @@ input:invalid{
 
 .bgc-transparent-x-dark{
     background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Media queries */
+
+@media (min-width: 60em) {
+    body{
+        flex-direction: row;
+    }
+    .logo{
+        margin-top: 10rem;
+    }
+    .form-wrapper{
+        align-items: flex-start;
+    }
+    .register-form{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .form-header{
+        width: 100%;
+    }
 }
