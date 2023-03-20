@@ -1,3 +1,11 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+@font-face {
+    font-family: Pizzaria;
+    src: url("../assets/Pizzaria-MVZrJ.ttf");
+}
+
 /* General styling */
 
 *, *::after, *::before{
@@ -16,6 +24,7 @@ body{
     padding: 0;
     min-height: 100vh;
     display: flex;
+    font-family: Roboto;
 }
 
 p{
@@ -24,13 +33,6 @@ p{
 
 img{
     max-width: 7rem;
-}
-
-/* Fonts */
-
-@font-face {
-    font-family: Pizzaria;
-    src: url("../assets/Pizzaria-MVZrJ.ttf");
 }
 
 /* Typography */
@@ -89,6 +91,10 @@ main{
 
 .text-clr-light{
     color: var(--clr-light);
+}
+
+.text-line-through{
+    text-decoration: line-through;
 }
 
 .bgc-semi-light{
