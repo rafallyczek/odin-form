@@ -13,17 +13,23 @@
 }
 
 :root{
+    --clr-primary: hsl(34, 60%, 50%);
+    --clr-primary-dark: hsl(34, 60%, 40%);
+    --clr-accent: hsl(34, 50%, 90%);
     --clr-light: hsl(0, 0%, 98%);
-    --clr-semi-light: hsl(34, 50%, 90%);
 
     --fs-large: 4rem;
+    --fs-medium: 1.5rem;
+
+    --fw-bold: 600;
 }
 
 body{
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
     font-family: Roboto;
 }
 
@@ -33,6 +39,18 @@ p{
 
 img{
     max-width: 7rem;
+}
+
+button{
+    border: none;
+    border-radius: .2rem;
+    padding: .5rem 1rem; 
+    cursor: pointer;
+    font-size: inherit;
+}
+
+button:hover{
+    background-color: var(--clr-primary-dark);
 }
 
 /* Typography */
@@ -46,14 +64,11 @@ a{
 header{
     background-image: url("../assets/pizza.jpg");
     background-size: cover;
-    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
 }
 
 main{
-    flex-grow: 2;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -74,9 +89,23 @@ main{
 }
 
 .desc,
-.form,
-.credit{
+.form-wrapper,
+.credit,
+.login{
     padding: 1rem;
+}
+
+.register-form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 25em;
+    gap: 1rem;
+}
+
+.row{
+    display: flex;
+    flex-direction: column;
 }
 
 /* Utility classes */
@@ -89,16 +118,32 @@ main{
     font-size: var(--fs-large);
 }
 
+.fs-medium{
+    font-size: var(--fs-medium);
+}
+
+.fw-bold{
+    font-weight: var(--fw-bold);
+}
+
 .text-clr-light{
     color: var(--clr-light);
+}
+
+.text-clr-primary{
+    color: var(--clr-primary);
 }
 
 .text-line-through{
     text-decoration: line-through;
 }
 
-.bgc-semi-light{
-    background-color: var(--clr-semi-light);
+.bgc-accent{
+    background-color: var(--clr-accent);
+}
+
+.bgc-primary{
+    background-color: var(--clr-primary);
 }
 
 .bgc-light{

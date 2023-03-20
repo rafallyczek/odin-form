@@ -17,12 +17,49 @@
             <p><a href="https://unsplash.com/photos/D3Mag4BKqns" target="_blank">Photo</a> by <a href="https://unsplash.com/@pablopacheco_videografo" target="_blank">Pablo Pacheco</a> at <a href="https://unsplash.com/" target="_blank">Unsplash</a></p>
         </div>
     </header>
-    <main class="bgc-semi-light">
-        <div class="desc">
-            <p>With great power comes great <span class="text-line-through">responsibility</span> pizza time.</p>
+    <main class="bgc-accent">
+        <div class="desc fs-medium">
+            <p>
+                This is not a real online service!
+                With great power comes great <span class="text-line-through">responsibility</span> pizza time.
+                Great pizza time also comes with account in our service.
+            </p>
+            <br>
+            <p>
+                Sign up now!
+            </p>
         </div>
-        <div class="form bgc-light">
-            Here will be registration form.
+        <div class="form-wrapper bgc-light">
+            <form class="register-form" action="" method="post">
+                <div class="row">
+                    <label for="first_name">First name</label>
+                    <input type="text" id="first_name" name="first_name">
+                </div>
+                <div class="row">
+                    <label for="last_name">Last name</label>
+                    <input type="text" id="last_name" name="last_name">
+                </div>
+                <div class="row">
+                    <label for="mail">Email</label>
+                    <input type="email" id="mail" name="mail">
+                </div>
+                <div class="row">
+                    <label for="phone">Phone number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="row">
+                    <label for="passw">Password</label>
+                    <input type="password" id="passw" name="passw">
+                </div>
+                <div class="row">
+                    <label for="passw_confirm">Confirm password</label>
+                    <input type="password" id="passw_confirm" name="passw_confirm">
+                </div>
+                <button class="bgc-primary text-clr-light fw-bold" type="submit">Create Account</button>
+            </form>
+        </div>
+        <div class="login">
+            <p>Already have an account? <a class="text-clr-primary" href="#">Log in</a></p>
         </div>
     </main>
 </body>
