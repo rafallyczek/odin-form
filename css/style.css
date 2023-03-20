@@ -114,6 +114,7 @@ main{
     justify-content: flex-start;
     width: 30em;
     gap: 1rem;
+    margin-top: 1rem;
 }
 
 .row{
