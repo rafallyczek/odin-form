@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <div class="logo fs-large text-clr-light bgc-transparent-dark">
+        <div class="logo fs-x-large text-clr-light bgc-transparent-dark">
             <img src="./assets/pizza.svg">
             <p>Pizza Time</p>
         </div>
@@ -31,30 +31,31 @@
         </div>
         <div class="form-wrapper bgc-light">
             <form class="register-form">
-                <p class="form-header fs-medium">Register new account</p>
+                <p class="fs-large">Register new account</p>
+                <p class="fs-small">Fields marked with <span class="req">*</span> are required.</p>
                 <div class="row">
-                    <label for="first_name">First name</label>
-                    <input type="text" id="first_name" name="first_name">
+                    <label for="first_name">First name <span class="req">*</span></label>
+                    <input type="text" id="first_name" name="first_name" required>
                 </div>
                 <div class="row">
-                    <label for="last_name">Last name</label>
-                    <input type="text" id="last_name" name="last_name">
+                    <label for="last_name">Last name <span class="req">*</span></label>
+                    <input type="text" id="last_name" name="last_name" required>
                 </div>
                 <div class="row">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email">
+                    <label for="email">Email <span class="req">*</span></label>
+                    <input type="email" id="email" name="email" required>
                 </div>
                 <div class="row">
                     <label for="phone">Phone number</label>
                     <input type="tel" id="phone" name="phone">
                 </div>
                 <div class="row">
-                    <label for="passw">Password</label>
-                    <input type="password" id="passw" name="passw">
+                    <label for="passw">Password <span class="req">*</span></label>
+                    <input type="password" id="passw" name="passw" minlength="6" required>
                 </div>
                 <div class="row">
-                    <label for="passw_confirm">Confirm password</label>
-                    <input type="password" id="passw_confirm" name="passw_confirm">
+                    <label for="passw_confirm">Confirm password <span class="req">*</span></label>
+                    <input type="password" id="passw_confirm" name="passw_confirm" minlength="6" required>
                 </div>
                 <button class="bgc-primary text-clr-light fw-bold" type="submit">Create Account</button>
             </form>
