@@ -15,13 +15,14 @@
 :root{
     --clr-primary: hsl(34, 60%, 50%);
     --clr-primary-dark: hsl(34, 60%, 40%);
-    --clr-accent: hsl(34, 50%, 97%);
+    --clr-primary-light: hsl(34, 50%, 97%);
 
     --clr-semi-light: hsl(0, 0%, 70%);
     --clr-light: hsl(0, 0%, 98%);
 
-    --clr-focus: hsl(204, 85%, 70%);
-    --clr-error: hsl(0, 86%, 70%);
+    --clr-accent-blue: hsl(204, 85%, 70%);
+    --clr-accent-red: hsl(0, 86%, 70%);
+    --clr-accent-green: hsl(108, 60%, 70%);
 
     --fs-x-large: 4rem;
     --fs-large: 1.7rem;
@@ -124,7 +125,7 @@ main{
     flex-direction: column;
     align-items: center;
     max-width: 30em;
-    gap: 1rem;
+    gap: .7rem;
     margin-top: 1rem;
 }
 
@@ -134,14 +135,28 @@ main{
     gap: .1rem;
 }
 
+.row > p{
+    visibility: hidden;
+    max-width: 12.4rem;
+}
+
+.row > p::before{
+    content: '\2757';
+    display: inline-block;
+    width: 1rem;
+    aspect-ratio: 1 / 1;
+    margin-right: .1rem;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 50%;
+    color: var(--clr-light);
+    background-color: var(--clr-accent-red);
+}
+
 label{
     font-size: .8rem;
     text-transform: uppercase;
     margin-left: .2rem;
-}
-
-.req{
-    color: var(--clr-error);
 }
 
 input{
@@ -153,13 +168,20 @@ input{
 }
 
 input:focus{
-    border-color: var(--clr-focus);
+    border-color: var(--clr-accent-blue);
     box-shadow: 0 0 .1rem var(--clr-semi-light);
 }
 
-input:focus:invalid{
-    border-color: var(--clr-error);
-    box-shadow: 0 0 .1rem var(--clr-semi-light);
+input::placeholder{
+    color: var(--clr-semi-light);
+}
+
+.invalid{
+    border-color: var(--clr-accent-red);
+}
+
+.valid{
+    border-color: var(--clr-accent-green);
 }
 
 /* Utility classes */
@@ -200,12 +222,16 @@ input:focus:invalid{
     color: var(--clr-primary);
 }
 
+.text-clr-accent-red{
+    color: var(--clr-accent-red);
+}
+
 .text-line-through{
     text-decoration: line-through;
 }
 
-.bgc-accent{
-    background-color: var(--clr-accent);
+.bgc-primary-light{
+    background-color: var(--clr-primary-light);
 }
 
 .bgc-primary{
@@ -251,6 +277,10 @@ input:focus:invalid{
 
     form > p{
         width: 100%;
+    }
+
+    .row > p{
+        min-height: 2rem;
     }
     
 }
