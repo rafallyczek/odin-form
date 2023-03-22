@@ -141,13 +141,14 @@ main{
 }
 
 .row > p::before{
-    content: '\002757';
+    content: "!";
     display: inline-block;
     width: 1rem;
     aspect-ratio: 1 / 1;
     margin-right: .1rem;
     text-align: center;
-    font-weight: bold;
+    font-weight: 500;
+    text-shadow: 0 0 1px var(--clr-light);
     border-radius: 50%;
     color: var(--clr-light);
     background-color: var(--clr-accent-red);
