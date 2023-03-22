@@ -214,6 +214,7 @@ function setValid(input){
 
     input.classList.add("valid");
     input.setAttribute("data-mode","lazy");
+    input.nextElementSibling.textContent = "";
     input.nextElementSibling.style.visibility = "hidden";
 
 }
