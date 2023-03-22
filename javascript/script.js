@@ -17,34 +17,63 @@ form.addEventListener("submit", (e) => {
 
 });
 
+//Lazy validation
 form.addEventListener("focusout", (e) => {
 
-    switch(e.target.id){
-        case "first_name":
-            validateName(e.target);
-            break;
-        case "last_name":
-            validateName(e.target);
-            break;
-        case "email":
-            validateEmail(e.target);
-            break;
-        case "phone":
-            validatePhone(e.target);
-            break;
-        case "passw":
-            validatePassword(e.target);
-            break;
-        case "passw_confirm":
-            validatePasswordConfirm(e.target);
-            break;
+    let mode = e.target.getAttribute("data-mode");
+    
+    if(mode == "lazy"){
+        switch(e.target.id){
+            case "first_name":
+                validateName(e.target);
+                break;
+            case "last_name":
+                validateName(e.target);
+                break;
+            case "email":
+                validateEmail(e.target);
+                break;
+            case "phone":
+                validatePhone(e.target);
+                break;
+            case "passw":
+                validatePassword(e.target);
+                break;
+            case "passw_confirm":
+                validatePasswordConfirm(e.target);
+                break;
+        }
     }
 
 });
 
+//Aggressive validation
 form.addEventListener("input", (e) => {
 
+    let mode = e.target.getAttribute("data-mode");
 
+    if(mode=="aggressive"){
+        switch(e.target.id){
+            case "first_name":
+                validateName(e.target);
+                break;
+            case "last_name":
+                validateName(e.target);
+                break;
+            case "email":
+                validateEmail(e.target);
+                break;
+            case "phone":
+                validatePhone(e.target);
+                break;
+            case "passw":
+                validatePassword(e.target);
+                break;
+            case "passw_confirm":
+                validatePasswordConfirm(e.target);
+                break;
+        }
+    }
 
 });
 
@@ -171,6 +200,7 @@ function setInvalid(input,message){
     }
 
     input.classList.add("invalid");
+    input.setAttribute("data-mode","aggressive");
     input.nextElementSibling.textContent = message;
     input.nextElementSibling.style.visibility = "visible";
 
@@ -183,6 +213,7 @@ function setValid(input){
     }
 
     input.classList.add("valid");
+    input.setAttribute("data-mode","lazy");
     input.nextElementSibling.style.visibility = "hidden";
 
 }
