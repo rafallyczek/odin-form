@@ -141,7 +141,7 @@ main{
 }
 
 .row > p::before{
-    content: '\2757';
+    content: '\002757';
     display: inline-block;
     width: 1rem;
     aspect-ratio: 1 / 1;
