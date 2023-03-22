@@ -1,3 +1,4 @@
+//Constants
 const first_name = document.getElementById("first_name");
 const last_name = document.getElementById("last_name");
 const email = document.getElementById("email");
@@ -6,81 +7,7 @@ const passw = document.getElementById("passw");
 const passw_confirm = document.getElementById("passw_confirm");
 const form = document.querySelector(".register-form");
 
-first_name.addEventListener("blur", (e) => {
-
-    if(!validateRequired(e.target)){
-        setInvalid(e.target,"This field is required");
-        return;
-    }
-
-    setValid(e.target);
-
-});
-
-last_name.addEventListener("blur", (e) => {
-
-    if(!validateRequired(e.target)){
-        setInvalid(e.target,"This field is required");
-        return;
-    }
-
-    setValid(e.target);
-
-});
-
-email.addEventListener("blur", (e) => {
-
-    if(!validateRequired(e.target)){
-        setInvalid(e.target,"This field is required");
-        return;
-    }else if(!validateEmail(e.target)){
-        setInvalid(e.target,"Valid email is required");
-        return;
-    }
-
-    setValid(e.target);
-
-});
-
-phone.addEventListener("blur", (e) => {
-
-    if(!validatePhone(e.target)){
-        setInvalid(e.target,"Enter valid phone number");
-        return;
-    }
-
-    setValid(e.target);
-
-});
-
-passw.addEventListener("blur", (e) => {
-
-    if(!validateRequired(e.target)){
-        setInvalid(e.target,"This field is required");
-        return;
-    }else if(!validateLength(e.target)){
-        setInvalid(e.target,"Password must be at least 6 characters long");
-        return;
-    }
-
-    setValid(e.target);
-
-});
-
-passw_confirm.addEventListener("blur", (e) => {
-
-    if(!validateRequired(e.target)){
-        setInvalid(e.target,"This field is required");
-        return;
-    }else if(!validatePasswordMatch(e.target)){
-        setInvalid(passw_confirm,"Enter matching passwords");
-        return;
-    }
-
-    setValid(e.target);
-
-});
-
+//Listeners
 form.addEventListener("submit", (e) => {
 
     const errors = document.querySelectorAll(".invalid");
@@ -90,7 +17,104 @@ form.addEventListener("submit", (e) => {
 
 });
 
-function validateRequired(input){
+form.addEventListener("focusout", (e) => {
+
+    switch(e.target.id){
+        case "first_name":
+            validateName(e.target);
+            break;
+        case "last_name":
+            validateName(e.target);
+            break;
+        case "email":
+            validateEmail(e.target);
+            break;
+        case "phone":
+            validatePhone(e.target);
+            break;
+        case "passw":
+            validatePassword(e.target);
+            break;
+        case "passw_confirm":
+            validatePasswordConfirm(e.target);
+            break;
+    }
+
+});
+
+form.addEventListener("input", (e) => {
+
+
+
+});
+
+//Validators
+function validateName(input){
+
+    if(!isRequired(input)){
+        setInvalid(input,"This field is required");
+        return;
+    }
+
+    setValid(input);
+
+}
+
+function validateEmail(input){
+
+    if(!isRequired(input)){
+        setInvalid(input,"This field is required");
+        return;
+    }else if(!isEmail(input)){
+        setInvalid(input,"Valid email is required");
+        return;
+    }
+
+    setValid(input);
+
+}
+
+function validatePhone(input){
+
+    if(!isPhone(input)){
+        setInvalid(input,"Enter valid phone number");
+        return;
+    }
+
+    setValid(input);
+
+}
+
+function validatePassword(input){
+
+    if(!isRequired(input)){
+        setInvalid(input,"This field is required");
+        return;
+    }else if(!isLongEnough(input)){
+        setInvalid(input,"Password must be at least 6 characters long");
+        return;
+    }
+
+    setValid(input);
+
+}
+
+function validatePasswordConfirm(input){
+
+    if(!isRequired(input)){
+        setInvalid(input,"This field is required");
+        return;
+    }else if(!isPasswordMatching(input)){
+        setInvalid(input,"Enter matching passwords");
+        return;
+    }
+
+    setValid(input);
+
+}
+
+// Utility functions
+function isRequired(input){
 
     if(input.validity.valueMissing){
         return false;
@@ -100,7 +124,7 @@ function validateRequired(input){
 
 }
 
-function validateEmail(input){
+function isEmail(input){
 
     if(input.validity.typeMismatch){
         return false;
@@ -110,7 +134,7 @@ function validateEmail(input){
 
 }
 
-function validatePhone(input){
+function isPhone(input){
 
     if(input.validity.patternMismatch){
         return false;
@@ -120,7 +144,7 @@ function validatePhone(input){
 
 }
 
-function validateLength(input){
+function isLongEnough(input){
 
     if(input.validity.tooShort){
         return false;
@@ -130,7 +154,7 @@ function validateLength(input){
 
 }
 
-function validatePasswordMatch(input){
+function isPasswordMatching(input){
 
     if(input.value != passw.value){
         return false;
