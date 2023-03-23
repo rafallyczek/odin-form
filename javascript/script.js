@@ -1,8 +1,4 @@
 //Constants
-const first_name = document.getElementById("first_name");
-const last_name = document.getElementById("last_name");
-const email = document.getElementById("email");
-const phone = document.getElementById("phone");
 const passw = document.getElementById("passw");
 const passw_confirm = document.getElementById("passw_confirm");
 const form = document.querySelector(".register-form");
@@ -122,6 +118,10 @@ function validatePassword(input){
     }else if(!isLongEnough(input)){
         setInvalid(input,"Password must be at least 6 characters long");
         return;
+    }
+
+    if(!isPasswordMatching(passw_confirm)){
+        setInvalid(passw_confirm,"Enter matching passwords");
     }
 
     setValid(input);
